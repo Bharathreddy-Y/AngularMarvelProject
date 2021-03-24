@@ -1,0 +1,28 @@
+.main-dashboard-main{
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+}
+.main-dashboard-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, minmax(100px,250px));
+    grid-template-rows: repeat(2,minmax(100px ,110px));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+.main-card-title{
+    text-align: center;
+}
+.table-div{
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+}
+.mat-table{
+    width: 100%;
+}
+.mat-cell{
+    padding: 8px 15px 8px 0;
+}

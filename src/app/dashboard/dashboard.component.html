@@ -1,0 +1,225 @@
+<div class="main-dashboard-main">
+    <div class="main-dashboard-grid">
+        <mat-card  (click)="comics()">
+            <mat-card-title class="main-card-title">Comics</mat-card-title>
+        </mat-card>
+        
+        <mat-card  (click)="charater()">
+            <mat-card-title class="main-card-title">
+                Character
+            </mat-card-title>
+        </mat-card>
+            <mat-card (click)="events()">
+                <mat-card-title class="main-card-title">
+                    Events
+                </mat-card-title>
+            </mat-card>
+        <mat-card (click)="series()">
+            <mat-card-title class="main-card-title">
+                Series
+            </mat-card-title>
+        </mat-card>
+        <mat-card (click)="stories()">
+            <mat-card-title class="main-card-title">
+                Stories
+            </mat-card-title>
+        </mat-card>
+            <mat-card (click)="creators()">
+                <mat-card-title class="main-card-title">
+                    Creators
+                </mat-card-title>
+            </mat-card>
+    </div>
+    <!-- Character table starts here -->
+    <div class="table-div" *ngIf="showCharacter">
+        <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Description</th>
+                <td mat-cell *matCellDef="let elements" > {{elements.description ? elements.description : "No description Exist for this Character"}} </td>
+              </ng-container>
+              <ng-container matColumnDef="modified" >
+                <th mat-header-cell *matHeaderCellDef> Modified </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.modified}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="characterColumns" ></tr>
+              <tr mat-row *matRowDef="let row; columns: characterColumns;"></tr>
+        </table>
+    </div>
+    
+<!-- comics table starts here -->
+<div class="table-div" *ngIf="showComics">
+    <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.title}} </td>
+          </ng-container>
+          <ng-container matColumnDef="variantDescription">
+            <th mat-header-cell *matHeaderCellDef> VariantDescription</th>
+            <td mat-cell *matCellDef="let elements" > {{elements.variantDescription ? elements.variantDescription : "No variantDescription Exist for this Comic"}} </td>
+          </ng-container>
+          <ng-container matColumnDef="issueNumber" >
+            <th mat-header-cell *matHeaderCellDef> issueNumber </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.issueNumber}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="comicsColumns" ></tr>
+          <tr mat-row *matRowDef="let row; columns: comicsColumns;"></tr>
+    
+    </table>
+</div>
+<!-- Events table starts here -->
+<div class="table-div" *ngIf="showEvents">
+    <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.title}} </td>
+          </ng-container>
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description</th>
+            <td mat-cell *matCellDef="let elements" > {{elements.description ? elements.description : "No description Exist for this Comic"}} </td>
+          </ng-container>
+          <ng-container matColumnDef="resourceURI" >
+            <th mat-header-cell *matHeaderCellDef> resourceURI </th>
+            <td mat-cell *matCellDef="let elements"> {{elements.resourceURI}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="eventsColumns" ></tr>
+          <tr mat-row *matRowDef="let row; columns: eventsColumns;"></tr>
+    
+    </table>
+</div>
+<!-- Series table starts here -->
+    <div class="table-div" *ngIf="showSeries">
+        <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.title}} </td>
+              </ng-container>
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Description</th>
+                <td mat-cell *matCellDef="let elements" > {{elements.description ? elements.description : "No description Exist for this Character"}} </td>
+              </ng-container>
+              <ng-container matColumnDef="startYear" >
+                <th mat-header-cell *matHeaderCellDef> Start Year </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.startYear}} </td>
+              </ng-container>
+              <ng-container matColumnDef="endYear" >
+                <th mat-header-cell *matHeaderCellDef> End Year </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.endYear}} </td>
+              </ng-container>
+              <ng-container matColumnDef="resourceURI" >
+                <th mat-header-cell *matHeaderCellDef> resourceURI </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.resourceURI}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="seriesColumns" ></tr>
+              <tr mat-row *matRowDef="let row; columns: seriesColumns;"></tr>
+        
+        </table>
+    </div>
+    <!-- Events Table Starts here -->
+    <div class="table-div" *ngIf="showCreators">
+        <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef> FirstName </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.firstName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="collectionURI">
+                <th mat-header-cell *matHeaderCellDef> collectionURI</th>
+                <td mat-cell *matCellDef="let elements" > {{elements.comics.collectionURI}} </td>
+              </ng-container>
+              <ng-container matColumnDef="resourceURI" >
+                <th mat-header-cell *matHeaderCellDef> resourceURI </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.resourceURI}} </td>
+              </ng-container>
+              <ng-container matColumnDef="modified" >
+                <th mat-header-cell *matHeaderCellDef> Modified </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.modified}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="creatorsColumns" ></tr>
+              <tr mat-row *matRowDef="let row; columns: creatorsColumns;"></tr>
+        
+        </table>
+    </div>
+    <!-- Stories table starts here -->
+    <div class="table-div" *ngIf="showStories">
+        <mat-paginator 
+            [length]="100"
+            (page)="handlePage($event)"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+        </mat-paginator>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.title}} </td>
+              </ng-container>
+              <ng-container matColumnDef="resourceURI" >
+                <th mat-header-cell *matHeaderCellDef> resourceURI </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.resourceURI}} </td>
+              </ng-container>
+              <ng-container matColumnDef="modified" >
+                <th mat-header-cell *matHeaderCellDef> Modified </th>
+                <td mat-cell *matCellDef="let elements"> {{elements.modified}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="storiesColumns" ></tr>
+              <tr mat-row *matRowDef="let row; columns: storiesColumns;"></tr>
+        
+        </table>
+    </div>
+</div>
