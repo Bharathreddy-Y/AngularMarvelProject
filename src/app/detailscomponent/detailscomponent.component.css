@@ -1,0 +1,29 @@
+.details-comp-div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    background: lightsteelblue;
+    z-index: 1;
+}
+.details-main-div{
+    position: relative;
+    left: 50%;
+    top: 25%;
+    margin-left: -20rem;
+    /* margin-top: 50%; */
+    /* transform: translateX(-15rem);
+    transform: translatey(-12.5rem); */
+    height: 25rem;
+    width: 40rem;
+    background-color: #ffff;
+    z-index: 10;
+}
+.material-icons{
+    position: relative;
+    font-size: 2rem;
+    float: right;
+    right: 4rem;
+    top: 2rem;
+    cursor: pointer;
+}

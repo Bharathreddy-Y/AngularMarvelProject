@@ -12,6 +12,13 @@
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
 }
+.mat-card{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.mat-paginator{
+    margin-top: 2rem;
+}
 .main-card-title{
     text-align: center;
 }
@@ -26,3 +33,6 @@
 .mat-cell{
     padding: 8px 15px 8px 0;
 }
+.th.mat-sort-header-sorted {
+    color: black;
+  }

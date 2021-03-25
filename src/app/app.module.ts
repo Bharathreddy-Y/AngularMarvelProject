@@ -20,7 +20,14 @@ import { MatTableModule } from '@angular/material/table'
 import { CdkTableModule} from '@angular/cdk/table';
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatSortModule} from '@angular/material/sort';
+import { DetailscomponentComponent } from './detailscomponent/detailscomponent.component'
+import {MatDialogModule} from '@angular/material/dialog';
+import { MainComponent } from './main/main.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     SeriesComponent,
     StoriesComponent,
     CreatorsComponent,
-    DashboardComponent
+    DashboardComponent,
+    DetailscomponentComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,12 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatTableModule,
     CdkTableModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSortModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

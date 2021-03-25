@@ -1,0 +1,200 @@
+.main-table-div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffff;
+}
+.main-table-left{
+    height: auto;
+    width: 10%;
+    border-right: 2px solid lightgray;
+    box-shadow: 1px 1px lightgray;
+}
+.main-table-right{
+    height: auto;
+    width:100%
+}
+.main-header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.main-header-div{
+    height: 15%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.main-header-div h3{
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: rgb(163, 158, 158);
+    position: relative;
+}
+.main-header-select{
+    text-transform: capitalize;
+    background-color: transparent;
+    color: rgb(126, 122, 122);
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+.search-bar{
+    height: 2.5rem;
+    width: 15rem;
+    border-radius: 2rem;
+    /* background-color: aqua; */
+}
+.left-icons{
+    margin-top: 13rem;
+    margin-left: -2rem;
+}
+.matInputs{
+    background-color: black;
+}
+.material-icons{
+    position: relative;
+    left: 80%;
+    top: -30%;
+}
+.main-body-div{
+    height: 83%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.main-body-left-div{
+    height: auto;
+    width: 100%;
+}
+.main-body-left-header{
+    display: flex;
+    flex-direction: row;
+}
+.main-body-left-header-table{
+    margin-left: 1rem;
+}
+.main-body-left-header-name{
+    font-weight: 600;
+    color: rgb(92, 82, 82);
+    margin-left: 0.5rem;
+}
+
+.main-body-left-body{
+    height: auto;
+    width: 100%;
+}
+.main-body-left-body-first-cards{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(100px,auto));
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-right: none;
+}
+.main-body-left-body-second-cards{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+.mat-form-field{
+    width: 97%;
+    outline: none;
+    border: none;
+}
+.mat-select{
+    height: 3rem;
+    width: 100%;
+}
+.main-body-left-body-mat-card{
+    border: 1px solid black;
+    border-radius: 0%;
+}
+.mat-card h4{
+    color: rgb(92, 84, 84);
+    font-weight: 500;
+    text-align: center;
+}
+.main-body-left-body-last-cards{
+    height: auto;
+    width: 100%;
+}
+.main-body-left-body-cards{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(300px,auto));
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+.main-body-left-body-last-mat-card{
+    height: 12rem;
+    width : 23rem;
+    display: flex;
+    flex-direction: row;
+}
+.image-card{
+    height: 100%;
+    width: 35%;
+    background-color: antiquewhite;
+}
+.image-resize{
+    height: 100%;
+    width: 100%;
+}
+.details-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.mat-button{
+    margin-left: 0.5rem;
+    border: 1px solid black;
+}
+.button-card{
+    width: 100%;
+}
+.main-body-right-div{
+    height: auto;
+    width: 50%;
+}
+.main-body-right-body-first-card{
+    display: flex;
+    flex-direction: column;
+}
+.check-name-div{
+    font-weight: 800;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+.main-body-right-body-mat-card{
+    height: 7rem;
+    margin-top: 4rem;
+    border-bottom: 2px solid black;
+    width: auto;
+}
+.main-body-right-body-last-mat-card{
+    height: 7rem;
+    margin-top: 13rem;
+    width: auto;
+}
+.payment-button{
+    background-color: rgb(38, 187, 38);
+    width: 98%;
+    height: 3rem;
+}
+.main-body-right-body-mat-card-details{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+
+}

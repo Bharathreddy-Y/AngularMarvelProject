@@ -1,0 +1,193 @@
+<div class="main-table-div">
+    <div class="main-table-left">
+        <div class="left-icons">
+        <span class="material-icons">
+            flatware
+            </span>
+        </div>
+    </div>
+    <div class="main-table-right">
+        <div class="main-header">
+            <div class="main-header-div">
+                <h3>the great table</h3>
+                <select class="main-header-select">
+                    <option selected value="today">today</option>
+                </select>
+            </div>
+            <div class="search-bar">
+                <input matInput type="text" class="mat-inputs">
+                <span class="material-icons">
+                    search
+                </span>
+            </div>
+        </div>
+        <div class="main-body-div">
+            <div class="main-body-left-div">
+                <div class="main-body-left-header">
+                    <div class="main-body-left-header-table">Table</div><div class="main-body-left-header-name">5 - Bharath</div>
+                </div>
+                <div class="main-body-left-body">
+                    <div class="main-body-left-body-first-cards">
+                        <mat-card class="main-body-left-body-mat-card">
+                            <h4>Drinks</h4>
+                        </mat-card>
+                        <mat-card class="main-body-left-body-mat-card">
+                            <h4>Food</h4>
+                        </mat-card>
+                        <mat-card class="main-body-left-body-mat-card">
+                            <h4>Dessert</h4>
+                        </mat-card>
+                    </div>
+                    <div class="main-body-left-body-second-cards">
+                        <mat-form-field appearance="fill">
+                        <mat-label>State</mat-label>
+                        <mat-select>
+                            <!-- <mat-option>None</mat-option> -->
+                            <mat-option value="wine" >Wine</mat-option>
+                            <mat-option value="option2">Option 2</mat-option>
+                            <mat-option value="option3">Option 3</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="main-body-left-body-last-cards">
+                        <div class="main-body-left-body-cards">
+                            <mat-card class="main-body-left-body-last-mat-card" *ngFor="let i of productArray">
+                                <div class="image-card" ><img src="{{i.productImage}}" class="image-resize"/></div>
+                                <div class="details-card">
+                                    <div>
+                                        <div>{{i.productName}}</div>
+                                        <div>price {{i.productPrice}}$</div>
+                                    </div>
+                                    <div class="button-card">
+                                        <button mat-button >+</button>
+                                        <button mat-button>1</button>
+                                        <button mat-button>-</button>
+                                    </div>
+                                </div>
+                            </mat-card>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-body-right-div">
+                <div class="main-body-right-body-first-card">
+                    <div class="check-name-div">
+                        check
+                    </div>
+                    <div class="main-body-right-body-main-card">
+                        <mat-card class="main-body-right-body-mat-card">
+                            <div class="main-body-right-body-mat-card-details">
+                                <div>Drinks</div>
+                                <div>total:- 25$</div>
+                            </div>
+                            <div class="main-body-right-body-mat-card-details">
+                                <div>Product Name</div>
+                                <div>6$*2</div>
+                                <div>12$</div>
+                            </div>
+                            <div class="main-body-right-body-mat-card-details">
+                                <div>Product Name</div>
+                                <div>13$</div>
+                                <div>13$</div>
+                            </div>
+                        </mat-card>
+                        <mat-card class="main-body-right-body-mat-card">
+                            <div class="main-body-right-body-mat-card-details">
+                                <div>Food</div>
+                                <div></div>
+                                <div>25$</div>
+                            </div>
+                        </mat-card>
+                        <mat-card class="main-body-right-body-mat-card"></mat-card>
+                        <mat-card class="main-body-right-body-last-mat-card"></mat-card>
+                    </div>
+                    <div>
+                        <button mat-button class="payment-button">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- This is only comments section -->
+
+
+
+<!-- <mat-card class="main-body-left-body-last-mat-card">
+    <div class="image-card"><img src="#"/></div>
+    <div class="details-card">
+        <div>
+            <div>wine</div>
+            <div>price 20$</div>
+        </div>
+        <div class="button-card">
+            <button mat-button >+</button>
+            <button mat-button>1</button>
+            <button mat-button>-</button>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="main-body-left-body-last-mat-card">
+    <div class="image-card"><img src="#"/></div>
+    <div class="details-card">
+        <div>
+            <div>wine</div>
+            <div>price 20$</div>
+        </div>
+        <div class="button-card">
+            <button mat-button >+</button>
+            <button mat-button>1</button>
+            <button mat-button>-</button>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="main-body-left-body-last-mat-card">
+    <div class="image-card"><img src="#"/></div>
+    <div class="details-card">
+        <div>
+            <div>wine</div>
+            <div>price 20$</div>
+        </div>
+        <div class="button-card">
+            <button mat-button >+</button>
+            <button mat-button>1</button>
+            <button mat-button>-</button>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="main-body-left-body-last-mat-card">
+    <div class="image-card"><img src="#"/></div>
+    <div class="details-card">
+        <div>
+            <div>wine</div>
+            <div>price 20$</div>
+        </div>
+        <div class="button-card">
+            <button mat-button >+</button>
+            <button mat-button>1</button>
+            <button mat-button>-</button>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="main-body-left-body-last-mat-card">
+    <div class="image-card"><img src="#"/></div>
+    <div class="details-card">
+        <div>
+            <div>wine</div>
+            <div>price 20$</div>
+        </div>
+        <div class="button-card">
+            <button mat-button >+</button>
+            <button mat-button>1</button>
+            <button mat-button>-</button>
+        </div>
+    </div>
+</mat-card> -->

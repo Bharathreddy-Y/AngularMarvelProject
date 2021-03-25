@@ -12,6 +12,9 @@ export class ApiServicesService {
   getConfig():Observable<any>{
     return this.http.get("https://gateway.marvel.com:443/v1/public/characters?apikey=65006fd3de49b19b074ea580b0a2bd7c");
   }
+  getConfigById():Observable<any>{
+    return this.http.get("https://gateway.marvel.com:443/v1/public/characters/1011334?apikey=65006fd3de49b19b074ea580b0a2bd7c")
+  }
   getCharachetrsId():Observable<any>{
     return this.http.get("https://gateway.marvel.com:443/v1/public/characters/1011334?apikey=65006fd3de49b19b074ea580b0a2bd7c")
   }
