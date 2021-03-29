@@ -1,0 +1,36 @@
+.main-body-right-body-first-card{
+    display: flex;
+    flex-direction: column;
+}
+.check-name-div{
+    font-weight: 800;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+.main-body-right-body-mat-card{
+    min-height: 7rem;
+    max-height: auto;
+    margin-top: 4rem;
+    border-bottom: 2px solid black;
+    width: auto;
+}
+.main-body-right-body-last-mat-card{
+    height: 7rem;
+    margin-top: 13rem;
+    width: auto;
+}
+.main-body-right-body-mat-card-details{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+.payment-button{
+    background-color: rgb(38, 187, 38);
+    width: 98%;
+    height: 3rem;
+}
+.last{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

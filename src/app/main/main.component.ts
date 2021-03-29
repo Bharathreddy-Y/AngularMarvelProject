@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantServicesService } from '../Services/restaurant-services.service';
 
-const productWineObject = [
-  {id:0,productId:123,productName:'Kai Simone',productImage:'/../../assets/WineImages/j-mckinney-zIo9Fbh8qJc-unsplash.jpg',productPrice:10},
-  {id:1,productId:124,productName:'Assyrtiko',productImage:'/../../assets/WineImages/lambros-lyrarakis-shheaRqhdas-unsplash.jpg',productPrice:12},
-  {id:2,productId:125,productName:'Talamonti',productImage:'/../../assets/WineImages/gabriele-garanzelli-yqAk8NyqN3Y-unsplash.jpg',productPrice:15},
-  {id:3,productId:126,productName:'ondule',productImage:'/../../assets/WineImages/the-creative-exchange-EB2lqnX6oGo-unsplash.jpg',productPrice:6},
-  {id:4,productId:127,productName:'Nebla',productImage:'/../../assets/WineImages/joel-ambass-0GsUMtnH24s-unsplash.jpg',productPrice:9},
-  {id:5,productId:128,productName:'19 Crimes',productImage:'/../../assets/WineImages/marissa-lewis-rK_a-5QsFhw-unsplash.jpg',productPrice:14}
-]
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,14 +9,97 @@ const productWineObject = [
 })
 export class MainComponent implements OnInit {
 
-  public productArray : any
-  constructor() { }
+  public drinksList : any = [{name:"wine"},{name:"beer"}]
+  public foodList : any = [{name:"Biryani"},{name:"Roti"}]
+  showDrinksBeer: boolean = false
+  showDrinksWine : boolean = true;
+
+  showFoodBiryani : boolean = true;
+  showFoodRoti : boolean = false;
+  
+  showDrinks : boolean = true;
+  showFood : boolean = false;
+  showDessert : boolean =false;
+  public SelectedCategory="wine";
+  public SelectedFoodCategory="Biryani";
+  
+  drinksBackColor = true;
+  foodBackColor = false;
+  dessertBackColor =false;
+  constructor(private resServices : RestaurantServicesService) {
+   }
 
   ngOnInit(): void {
-    this.addToArray()
   }
-  addToArray(){
-    this.productArray = productWineObject
-    console.log(this.productArray)
+  drinkSelect(e:any)
+  {
+    if(e==="beer"){
+      this.resServices.showDrinksBeer = true
+      this.showDrinksBeer = this.resServices.showDrinksBeer
+
+      this.resServices.showDrinksWine = false
+      this.showDrinksWine = this.resServices.showDrinksWine
+      // console.log("Beer",this.resServices.showDrinksBeer)
+    }
+    if(e==="wine"){
+      this.resServices.showDrinksBeer = false
+      this.showDrinksBeer = this.resServices.showDrinksBeer
+
+      this.resServices.showDrinksWine = true
+      this.showDrinksWine = this.resServices.showDrinksWine
+      // console.log("Wine",this.resServices.showDrinksWine)
+    }
+  }
+  foodSelect(e:any)
+  {
+    if(e==="Biryani"){
+      this.resServices.showFoodBiryani = true
+      this.showFoodBiryani = this.resServices.showFoodBiryani
+
+      this.resServices.showFoodRoti = false
+      this.showFoodRoti = this.resServices.showFoodRoti
+      // console.log("Beer",this.resServices.showDrinksBeer)
+    }
+    if(e==="Roti"){
+      this.resServices.showFoodBiryani = false
+      this.showFoodBiryani = this.resServices.showFoodBiryani
+
+      this.resServices.showFoodRoti = true
+      this.showFoodRoti = this.resServices.showFoodRoti
+      // console.log("Wine",this.resServices.showDrinksWine)
+    }
+  }
+
+  ShowDrinks(){
+    this.resServices.showDrinks = true
+    this.showDrinks = this.resServices.showDrinks
+    this.drinksBackColor = true
+    this.resServices.showFood = false
+    this.showFood = this.resServices.showFood
+    this.foodBackColor = false
+    this.resServices.showDessert = false
+    this.showDessert = this.resServices.showDessert
+    this.dessertBackColor = false;
+  }
+  ShowFood(){
+    this.resServices.showDrinks = false
+    this.showDrinks = this.resServices.showDrinks
+    this.drinksBackColor= false;
+    this.resServices.showFood = true
+    this.showFood = this.resServices.showFood
+    this.foodBackColor = true
+    this.resServices.showDessert = false
+    this.showDessert = this.resServices.showDessert
+    this.dessertBackColor = false
+  }
+  ShowDessert(){
+    this.resServices.showDrinks = false
+    this.showDrinks = this.resServices.showDrinks
+    this.resServices.showFood = false
+    this.showFood = this.resServices.showFood
+    this.foodBackColor = false
+    this.resServices.showDessert = true
+    this.showDessert = this.resServices.showDessert
+    this.dessertBackColor = true
   }
 }

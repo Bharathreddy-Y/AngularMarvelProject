@@ -28,50 +28,53 @@
                 </div>
                 <div class="main-body-left-body">
                     <div class="main-body-left-body-first-cards">
-                        <mat-card class="main-body-left-body-mat-card">
+                        <mat-card class="main-body-left-body-mat-card" (click)="ShowDrinks()" [ngClass]="{'backcolor':drinksBackColor}">
                             <h4>Drinks</h4>
                         </mat-card>
-                        <mat-card class="main-body-left-body-mat-card">
+                        <mat-card class="main-body-left-body-mat-card" id="food" (click)="ShowFood()"[ngClass]="{'backcolor':foodBackColor}">
                             <h4>Food</h4>
                         </mat-card>
-                        <mat-card class="main-body-left-body-mat-card">
+                        <mat-card class="main-body-left-body-mat-card" id="dessert" (click)="ShowDessert()" [ngClass]="{'backcolor':dessertBackColor}">
                             <h4>Dessert</h4>
                         </mat-card>
                     </div>
+                    <div  *ngIf="showDrinks">
                     <div class="main-body-left-body-second-cards">
-                        <mat-form-field appearance="fill">
-                        <mat-label>State</mat-label>
-                        <mat-select>
-                            <!-- <mat-option>None</mat-option> -->
-                            <mat-option value="wine" >Wine</mat-option>
-                            <mat-option value="option2">Option 2</mat-option>
-                            <mat-option value="option3">Option 3</mat-option>
-                          </mat-select>
-                        </mat-form-field>
+                            <mat-form-field appearance="fill" >
+                            <mat-label>State</mat-label>
+                            <mat-select [(value)]="SelectedCategory">
+                                <mat-option  [value]="i.name"  *ngFor="let i of drinksList" (click)="drinkSelect(i.name)">{{i.name}}</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div *ngIf="showDrinksBeer">
+                            <app-drinks></app-drinks>
+                        </div>
+                        <div *ngIf="showDrinksWine">
+                            <app-drinks></app-drinks>
+                        </div>
                     </div>
-                    <div class="main-body-left-body-last-cards">
-                        <div class="main-body-left-body-cards">
-                            <mat-card class="main-body-left-body-last-mat-card" *ngFor="let i of productArray">
-                                <div class="image-card" ><img src="{{i.productImage}}" class="image-resize"/></div>
-                                <div class="details-card">
-                                    <div>
-                                        <div>{{i.productName}}</div>
-                                        <div>price {{i.productPrice}}$</div>
-                                    </div>
-                                    <div class="button-card">
-                                        <button mat-button >+</button>
-                                        <button mat-button>1</button>
-                                        <button mat-button>-</button>
-                                    </div>
-                                </div>
-                            </mat-card>
-                            
+                    <div  *ngIf="showFood">
+                        <div class="main-body-left-body-second-cards">
+                            <mat-form-field appearance="fill" >
+                            <mat-label>State</mat-label>
+                            <mat-select [(value)]="SelectedFoodCategory">
+                                <mat-option  [value]="i.name"  *ngFor="let i of foodList" (click)="drinkSelect(i.name)">{{i.name}}</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div *ngIf="showFoodBiryani">
+                            <app-food></app-food>
+                        </div>
+                        <div *ngIf="showFoodRoti">
+                            <app-food></app-food>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="main-body-right-div">
-                <div class="main-body-right-body-first-card">
+                <app-cart></app-cart>
+                <!-- <div class="main-body-right-body-first-card">
                     <div class="check-name-div">
                         check
                     </div>
@@ -105,7 +108,7 @@
                     <div>
                         <button mat-button class="payment-button">Pay Now</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
