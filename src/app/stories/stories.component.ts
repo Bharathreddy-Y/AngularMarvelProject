@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiServicesService } from '../api-services.service';
+import { dataclass } from '../Modules/DataModule';
 
 @Component({
   selector: 'app-stories',
@@ -8,15 +10,17 @@ import { ApiServicesService } from '../api-services.service';
 })
 export class StoriesComponent implements OnInit {
 
-  constructor(private service: ApiServicesService) { 
-    // this.getStories()
-  }
+  public StoriesById : dataclass = new dataclass()
+  public routeId:any
+  constructor(private service : ApiServicesService,private Ar : ActivatedRoute) {
+   }
 
   ngOnInit(): void {
+    this.routeId=this.Ar.snapshot.paramMap.get("id");
+    let charById = this.service.getStoriesById(this.routeId)
+    charById.subscribe(res=>{
+      this.StoriesById.marvel = res.data.results;
+      console.log("id",this.StoriesById.marvel)
+    })
   }
-  // getStories(){
-  //   this.service.getStories().subscribe(res=>{
-  //     console.log(res)
-  //   })
-  // }
 }

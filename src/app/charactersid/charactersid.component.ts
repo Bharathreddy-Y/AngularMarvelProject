@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import { ApiServicesService } from '../api-services.service';
+import { dataclass } from '../Modules/DataModule';
 
 @Component({
   selector: 'app-charactersid',
@@ -8,15 +10,17 @@ import { ApiServicesService } from '../api-services.service';
 })
 export class CharactersidComponent implements OnInit {
 
-  constructor(private service: ApiServicesService) {
-    this.getCharaterById()
+  public CharactersById : dataclass = new dataclass()
+  public routeId:any
+  constructor(private service : ApiServicesService,private Ar : ActivatedRoute) {
    }
 
   ngOnInit(): void {
-  }
-
-  getCharaterById(){
-    // this.service.getCharachetrsId().subscribe(res=>
-    //   console.log(res))
+    this.routeId=this.Ar.snapshot.paramMap.get("id");
+    let charById = this.service.getConfigById(this.routeId)
+    charById.subscribe(res=>{
+      this.CharactersById.marvel = res.data.results;
+      console.log(this.CharactersById.marvel)
+    })
   }
 }

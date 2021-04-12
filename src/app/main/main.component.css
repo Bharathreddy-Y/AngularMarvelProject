@@ -8,6 +8,7 @@
 .main-table-left{
     height: auto;
     width: 10%;
+    display: block;
     border-right: 2px solid lightgray;
     box-shadow: 1px 1px lightgray;
 }
@@ -24,7 +25,7 @@
 }
 .main-header-div{
     height: 15%;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -33,6 +34,7 @@
 .main-header-div h3{
     text-transform: capitalize;
     font-size: 2rem;
+    margin-top: 1rem;
     color: rgb(163, 158, 158);
     position: relative;
 }
@@ -47,21 +49,26 @@
 }
 .search-bar{
     height: 2.5rem;
-    width: 15rem;
+    width: 100%;
     border-radius: 2rem;
-    /* background-color: aqua; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 .left-icons{
     margin-top: 13rem;
-    margin-left: -2rem;
+    float: right;
 }
-.matInputs{
-    background-color: black;
+.mat-inputs{
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
 }
 .material-icons{
     position: relative;
-    left: 80%;
-    top: -30%;
+    right: 2rem;
+    top: 0.3rem ;
 }
 .main-body-div{
     height: 83%;
@@ -94,8 +101,6 @@
     display: grid;
     grid-template-columns: repeat(3,minmax(100px,auto));
     margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
     border-right: none;
 }
 .main-body-left-body-second-cards{
@@ -117,88 +122,45 @@
 .main-body-left-body-mat-card{
     border: 1px solid black;
     border-radius: 0%;
+    cursor: pointer;
 }
 .mat-card h4{
     color: rgb(92, 84, 84);
     font-weight: 500;
     text-align: center;
 }
-/* .main-body-left-body-last-cards{
-    height: auto;
-    width: 100%;
-}
-.main-body-left-body-cards{
-    display: grid;
-    grid-template-columns: repeat(2,minmax(300px,auto));
-    grid-column-gap: 2rem;
-    grid-row-gap: 3rem;
-    margin-top: 2rem;
-    margin-left: 3rem;
-}
-.main-body-left-body-last-mat-card{
-    height: 12rem;
-    width : 23rem;
-    display: flex;
-    flex-direction: row;
-}
-.image-card{
-    height: 100%;
-    width: 35%;
-    background-color: antiquewhite;
-}
-.image-resize{
-    height: 100%;
-    width: 100%;
-}
-.details-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.mat-button{
-    margin-left: 0.5rem;
-    border: 1px solid black;
-}
-.button-card{
-    width: 100%;
-} */
 .main-body-right-div{
     height: auto;
     width: 50%;
 }
 .backcolor{
     background-color: black;
+}
+.backcolor h4{
     color: #ffff;
 }
-/* .main-body-right-body-first-card{
-    display: flex;
-    flex-direction: column;
-}
-.check-name-div{
-    font-weight: 800;
-    text-transform: capitalize;
-    font-size: 1.2rem;
-}
-.main-body-right-body-mat-card{
-    height: 7rem;
-    margin-top: 4rem;
-    border-bottom: 2px solid black;
-    width: auto;
-}
-.main-body-right-body-last-mat-card{
-    height: 7rem;
-    margin-top: 13rem;
-    width: auto;
-}
-.payment-button{
-    background-color: rgb(38, 187, 38);
-    width: 98%;
-    height: 3rem;
-}
-.main-body-right-body-mat-card-details{
-    display: flex;
-    margin-top: 1rem;
-    justify-content: space-between;
 
-} */
+@media screen and (max-width : 769px) {
+    .search-bar{
+        display: none;
+    }
+    .main-body-div{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-body-right-div{
+        position: relative;
+        top: 5rem;
+        width: 100%;
+    }
+    .main-table-left{
+        display: none;
+    }
+    .main-header-div{
+        width: 100%;
+    }
+    .main-body-left-body-second-cards{
+        width: 95%;
+        margin-right: 0;
+    }
+}

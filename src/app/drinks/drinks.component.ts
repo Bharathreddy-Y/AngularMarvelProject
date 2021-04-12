@@ -7,12 +7,8 @@ import { RestaurantServicesService } from '../Services/restaurant-services.servi
   styleUrls: ['./drinks.component.css']
 })
 export class DrinksComponent implements OnInit {
-
-  
   public cartDrinkItems: any = [];
-  public x : any=[]
   constructor(private resServices : RestaurantServicesService) {
-    
    }
 
   ngOnInit(): void {
@@ -24,12 +20,10 @@ export class DrinksComponent implements OnInit {
     }
   setProduct(){
     this.resServices.setProduct()
-    this.cartDrinkItems = this.resServices.cartDrinkItems
-    console.log("cart Drink Items",this.cartDrinkItems)
+    this.cartDrinkItems = [...this.resServices.cartDrinkItems]
   }
   Increment(id:any){
     this.resServices.Increment(id)
-    // this.resServices.setChangedData(this.resServices.totalCart)
   }
   addToCart(id:any){
     this.resServices.addToCart(id)

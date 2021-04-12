@@ -7,6 +7,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { ActivatedRoute , Router } from '@angular/router'
 
 @Component({
   selector: 'app-dashboard',
@@ -30,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator : MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
-  constructor(private service : ApiServicesService) { }
+  constructor(private service : ApiServicesService,private route: Router) { }
 
   characterColumns: string[]=[
     'id',
@@ -88,12 +89,6 @@ export class DashboardComponent implements OnInit {
     this.length = event.length
     this.pageSize = event.pageSize
   }
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
-
-  
-
   ngOnInit(): void {
     let character = this.service.getConfig()
     let comics = this.service.getComics()
@@ -116,21 +111,19 @@ export class DashboardComponent implements OnInit {
     },3000)
     
   }
-  // sorteddata  = this.Characters.marvel
-  // sorting(sort:Sort){
-  //   const data = this.Characters.marvel
-  //   this.sorteddata = data.sort((a, b) => {
-  //     const isAsc = sort.direction === 'asc'
-  //     console.log(data)
-  //     switch (sort.active){
-  //       case 'id': 
-  //         return compare(a.id, b.id, isAsc);
-  //         break;
-  //       default:
-  //         return
-  //     }
-  //   })
-  // }
+  onClickCharctersRoute(array:any){
+    this.route.navigate(["dashboard/",array.id])}
+  onClickComicsRoute(array:any){
+    this.route.navigate(["comics/",array.id])}
+  onClickEventsRoute(array:any){
+    this.route.navigate(["events/",array.id])}
+  onClickSeriesRoute(array:any){
+    this.route.navigate(["series/",array.id])}
+  onClickCreatorsRoute(array:any){
+    this.route.navigate(["stories/",array.id])}
+  onClickStoriesRoute(array:any){
+    this.route.navigate(["creators/",array.id])}
+
   charater(){
     this.showCharacter =true;
     this.showComics =false
@@ -204,7 +197,3 @@ export class DashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 }
-
-// function compare(a: Number | string, b: Number | string, isAsc: boolean) {
-//   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-// }

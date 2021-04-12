@@ -19,6 +19,8 @@ export class RestaurantServicesService implements OnInit {
   showDrinksBeer: boolean = false;
   public cart: any = [];
   public item: any = [];
+  
+  public totalCart: any = [];
 
   public Foodcart: any = [];
   public Fooditem: any = [];
@@ -26,6 +28,12 @@ export class RestaurantServicesService implements OnInit {
 
   public cartDrinkItems: any = [];
   public cartFoodItems: any = [];
+  public cartSubTotal:number=0;
+  public cartTax:number=0;
+  public cartTotal:number=0;
+  public data:any=[]
+  public dataFood:any=[]
+  public c:number=0;
   ngOnInit() {}
 
   Wine() {
@@ -37,6 +45,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/j-mckinney-zIo9Fbh8qJc-unsplash.jpg',
         productPrice: 10,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 1,
@@ -45,6 +58,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/lambros-lyrarakis-shheaRqhdas-unsplash.jpg',
         productPrice: 12,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 2,
@@ -53,6 +71,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/gabriele-garanzelli-yqAk8NyqN3Y-unsplash.jpg',
         productPrice: 15,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 3,
@@ -61,6 +84,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/the-creative-exchange-EB2lqnX6oGo-unsplash.jpg',
         productPrice: 6,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 4,
@@ -69,6 +97,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/joel-ambass-0GsUMtnH24s-unsplash.jpg',
         productPrice: 9,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 5,
@@ -77,6 +110,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/marissa-lewis-rK_a-5QsFhw-unsplash.jpg',
         productPrice: 14,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
     ];
     return productWine;
@@ -90,6 +128,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/jakub-dziubak-5lZhD2qQ2SE-unsplash.jpg',
         productPrice: 10,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 7,
@@ -98,6 +141,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/david-pennington-TqvqPyf15_k-unsplash.jpg',
         productPrice: 12,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 8,
@@ -106,6 +154,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/yannis-papanastasopoulos-8RRPagVz9_Y-unsplash.jpg',
         productPrice: 15,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 9,
@@ -114,6 +167,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/nick-karvounis-UQxFepiJBPE-unsplash.jpg',
         productPrice: 6,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 10,
@@ -122,6 +180,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/tom-rogerson-zXl4QWaADLQ-unsplash.jpg',
         productPrice: 9,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 11,
@@ -130,6 +193,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/BeerImages/lloyd-dirks-nf_o8AHiyK4-unsplash.jpg',
         productPrice: 14,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
     ];
     return productBeer;
@@ -143,6 +211,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/FoodImages/alice-pasqual-a2scGjpiI5E-unsplash.jpg',
         productPrice: 10,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 13,
@@ -151,6 +224,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/FoodImages/drew-taylor-jFu2L04tMBc-unsplash - Copy.jpg',
         productPrice: 12,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 14,
@@ -159,6 +237,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/FoodImages/emiliano-vittoriosi-OFismyezPnY-unsplash - Copy.jpg',
         productPrice: 15,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
     ];
     return productBiryani;
@@ -172,6 +255,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/j-mckinney-zIo9Fbh8qJc-unsplash.jpg',
         productPrice: 10,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 16,
@@ -180,6 +268,11 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/lambros-lyrarakis-shheaRqhdas-unsplash.jpg',
         productPrice: 12,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
       {
         id: 17,
@@ -188,20 +281,24 @@ export class RestaurantServicesService implements OnInit {
         productImage:
           '/../../assets/WineImages/gabriele-garanzelli-yqAk8NyqN3Y-unsplash.jpg',
         productPrice: 15,
+        count: 0,
+        total: 0,
+        cartSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0,
       },
     ];
     return productRoti;
   }
   addToArray() {
     if (this.showDrinksBeer) {
-      this.productArray = this.Beer();
-      return this.productArray;
+      this.totalCart = this.Beer();
+      return this.totalCart;
     }
     if (this.showDrinksWine) {
       this.productArray = this.Wine();
       return this.productArray;
     }
-    // console.log('Wine Array',this.productArray)
   }
   addToFoodArray() {
     if (this.showFoodBiryani) {
@@ -214,30 +311,12 @@ export class RestaurantServicesService implements OnInit {
     }
   }
   setProduct() {
-    this.productArray.forEach((item: any) => {
-      const singleItem = {
-        ...item,
-        count: 0,
-        total: 0,
-        cartSubTotal: 0,
-        cartTax: 0,
-        cartTotal: 0,
-      };
-      this.cartDrinkItems = [...this.cartDrinkItems, singleItem];
-    });
+    this.cartDrinkItems= [...this.productArray]
+    console.log("product Items",this.totalCart)
+    console.log("cart Drink Items",this.cartDrinkItems)
   }
   setFoodProduct() {
-    this.productFoodArray.forEach((item: any) => {
-      const singleFoodItem = {
-        ...item,
-        count: 0,
-        total: 0,
-        cartSubTotal: 0,
-        cartTax: 0,
-        cartTotal: 0,
-      };
-      this.cartFoodItems = [...this.cartFoodItems, singleFoodItem];
-    });
+      this.cartFoodItems = [...this.productFoodArray];
   }
   Increment(id: any) {
     this.addToCart(id);
@@ -245,14 +324,7 @@ export class RestaurantServicesService implements OnInit {
     const tempCartIndex = tempCart.indexOf(
       this.cartDrinkItems.find((t: any) => t.id === id)
     );
-
-    let tempFoodCart = [...this.cartFoodItems];
-    const tempFoodCartIndex = tempFoodCart.indexOf(
-      this.cartFoodItems.find((t: any) => t.id === id)
-    );
-
     const productCart = tempCart[tempCartIndex];
-    const productFoodCart = tempFoodCart[tempFoodCartIndex];
     if (productCart) {
       productCart.count = productCart.count + 1;
       productCart.Price = productCart.productPrice * productCart.count;
@@ -263,24 +335,29 @@ export class RestaurantServicesService implements OnInit {
         this.item = [...tempCart];
       }
     }
+    
+
+    let tempFoodCart = [...this.cartFoodItems];
+    const tempFoodCartIndex = tempFoodCart.indexOf(
+      this.cartFoodItems.find((t: any) => t.id === id)
+    );
+    const productFoodCart = tempFoodCart[tempFoodCartIndex];
     if (productFoodCart) {
       productFoodCart.count = productFoodCart.count + 1;
-      productFoodCart.Price =
-        productFoodCart.productPrice * productFoodCart.count;
-      productCart.total = productCart.Price;
+      productFoodCart.Price = productFoodCart.productPrice * productFoodCart.count;
+      productFoodCart.total = productFoodCart.Price;
       console.log(productFoodCart.count, productFoodCart.Price);
       this.addTotals();
       {
         this.Fooditem = [...tempFoodCart];
       }
     }
-  }
-  Cart() {
-    return this.totalCart;
+    this.setChangedData(this.data)
+    this.setFoodChangedData(this.dataFood)
   }
   addTotals() {
+    let subTotal = 0;
     this.totalCart.forEach((item: any) => {
-      let subTotal = 0;
       subTotal += item.total;
       let tempTax = subTotal * 0.1;
       const Tax = parseFloat(tempTax.toFixed(2));
@@ -288,8 +365,27 @@ export class RestaurantServicesService implements OnInit {
       item.cartSubTotal = subTotal;
       item.cartTax = Tax;
       item.cartTotal = total;
+      
+      this.cartSubTotal = item.cartSubTotal
+      this.cartTax = item.cartTax;
+      this.cartTotal = item.cartTotal
     });
-    console.log(this.totalCart);
+    this.totalFoodCart.forEach((item: any) => {
+      subTotal += item.total;
+      let tempTax = subTotal * 0.1;
+      const Tax = parseFloat(tempTax.toFixed(2));
+      const total = subTotal + Tax;
+      item.cartSubTotal = subTotal;
+      item.cartTax = Tax;
+      item.cartTotal = total;
+      
+      this.cartSubTotal = item.cartSubTotal
+      this.cartTax = item.cartTax;
+      this.cartTotal = item.cartTotal
+    });
+    this.data=[{cartSubTotal:this.cartSubTotal,cartTax:this.cartTax,cartTotal:this.cartTotal}]
+    this.dataFood=[{cartSubTotal:this.cartSubTotal,cartTax:this.cartTax,cartTotal:this.cartTotal}]
+    console.log("data",this.totalFoodCart);
   }
   addToCart(id: any) {
     let tempCart = [...this.cartDrinkItems];
@@ -324,51 +420,73 @@ export class RestaurantServicesService implements OnInit {
     let tempCartIndex = tempCart.findIndex((t: any) => t.id === id);
     this.totalCart.splice(tempCartIndex, 1);
     console.log('My Cart Array', this.totalCart);
+    this.setChangedData(this.data)
+
+    let tempFoodCart = [...this.totalFoodCart];
+    let tempFoodCartIndex = tempFoodCart.findIndex((t: any) => t.id === id);
+    this.totalFoodCart.splice(tempFoodCartIndex, 1);
+    console.log('My Cart Array', this.totalFoodCart);
+    this.setFoodChangedData(this.dataFood)
   }
   Decrement(id: any) {
     let tempCart = [...this.totalCart];
     const tempCartIndex = tempCart.indexOf(
       this.totalCart.find((t: any) => t.id === id)
     );
-    console.log(tempCartIndex);
     const productCart = tempCart[tempCartIndex];
-    if (productCart && productCart.count > 0) {
-      productCart.count = productCart.count - 1;
-      productCart.Price = productCart.productPrice * productCart.count;
-      productCart.total = productCart.Price;
-      console.log(productCart.count, productCart.Price);
-      this.addTotals();
+    if(productCart){
+      if (productCart.count > 0) {
+        productCart.count = productCart.count - 1;
+        productCart.Price = productCart.productPrice * productCart.count;
+        productCart.total = productCart.Price;
+        console.log(productCart.count, productCart.Price);
+        this.addTotals();
+      }
+      if (productCart.count === 0) {
+        this.removeFromCart(id);
+      }
+      else{
+        return
+      }
     }
-    if (productCart.count === 0) {
-      this.removeFromCart(id);
-    }
-
     let tempFoodCart = [...this.totalFoodCart];
     const tempFoodCartIndex = tempFoodCart.indexOf(
       this.totalFoodCart.find((t: any) => t.id === id)
     );
     const productFoodCart = tempFoodCart[tempFoodCartIndex];
-    if (productFoodCart && productFoodCart.count > 0) {
-      productFoodCart.count = productFoodCart.count - 1;
-      productFoodCart.Price =
-        productFoodCart.productPrice * productFoodCart.count;
-      productFoodCart.total = productFoodCart.Price;
-      console.log(productFoodCart.count, productFoodCart.Price);
-      this.addTotals();
-      console.log(this.Fooditem);
-    } else {
-      return;
+    if(productFoodCart){
+      if (productFoodCart.count > 0) {
+        productFoodCart.count = productFoodCart.count - 1;
+        productFoodCart.Price =
+          productFoodCart.productPrice * productFoodCart.count;
+        productFoodCart.total = productFoodCart.Price;
+        console.log(productFoodCart.count, productFoodCart.Price);
+        this.addTotals();
+      }
+      if (productFoodCart.count === 0) {
+        this.removeFromCart(id);
+      }
+      else{
+        return
+      }
     }
   }
-  public totalCart: any = [];
-  // public subject = new Subject<any>();
-  // private updatedData = new BehaviorSubject(this.totalCart);
-  // setChangedData(data: any) {
-  //   this.updatedData.next(data);
-  //   // console.log("envrueinvr",data)
-  // }
+  public subject = new Subject<any>();
+  private updatedData = new BehaviorSubject(this.totalCart);
+  setChangedData(data: any) {
+    this.updatedData.next(data);
+  }
 
-  // getData(){
-  //  return this.updatedData.asObservable();
-  // }
+  getData(){
+   return this.updatedData.asObservable();
+  }
+  public subjectFood = new Subject<any>();
+  private updatedFoodData = new BehaviorSubject(this.totalFoodCart);
+  setFoodChangedData(dataFood: any) {
+    this.updatedFoodData.next(dataFood);
+  }
+
+  getFoodData(){
+   return this.updatedFoodData.asObservable();
+  }
 }

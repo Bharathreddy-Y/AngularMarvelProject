@@ -3,7 +3,7 @@
         <div class="check-name-div">
             check
         </div>
-        <div class="main-body-right-body-main-card" (click)="cart()">
+        <div class="main-body-right-body-main-card">
             <mat-card class="main-body-right-body-mat-card" >
                 <div class="main-body-right-body-mat-card-details" >
                     <div>Drinks</div>
@@ -14,38 +14,32 @@
                     <div>{{i.productPrice}}*{{i.count}}</div>
                     <div>{{i.total}}$</div>
                 </div>
-                <!-- <div class="main-body-right-body-mat-card-details">
-                    <div>Product Name</div>
-                    <div>13$</div>
-                    <div>13$</div>
-                </div> -->
             </mat-card>
             <mat-card class="main-body-right-body-mat-card">
                 <div class="main-body-right-body-mat-card-details">
                     <div>Food</div>
-                    <div></div>
-                    <div>25$</div>
+                    <div>total:- {{cartFoodTotal}}$</div>
+                </div>
+                <div class="main-body-right-body-mat-card-details" *ngFor="let i of cartFoodTotalItems">
+                    <div>{{i.productName}}</div>
+                    <div>{{i.productPrice}}*{{i.count}}</div>
+                    <div>{{i.total}}$</div>
                 </div>
             </mat-card>
             <mat-card class="main-body-right-body-mat-card"></mat-card>
-            <mat-card class="main-body-right-body-last-mat-card" *ngFor="let i of cartTotalItems">
+            <mat-card class="main-body-right-body-last-mat-card" >
                 <div class="last">
                     <div>Sub-Total</div>
-                    <div>{{i.cartSubTotal}}$</div>
+                    <div>{{cartSubTotal}}$</div>
                 </div>
                 <div class="last">
                     <div>EstimatedTaxes</div>
-                    <div>{{i.cartTax}}$</div>
+                    <div>{{cartTax}}$</div>
                 </div>
-                <!-- <div class="last">
-                    <div>Discount</div>
-                    <div>23$</div>
-                </div> -->
             </mat-card>
         </div>
-        <div>
+        <div class="pay-div">
             <button mat-button class="payment-button">Pay Now</button>
         </div>
     </div>
-<!-- </div> -->
 

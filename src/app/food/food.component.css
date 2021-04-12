@@ -67,3 +67,18 @@
 .button-card{
     width: 100%;
 }
+@media screen and (max-width : 769px) {
+    .main-body-left-body-cards{
+        display: grid;
+        grid-template-columns: repeat(1,minmax(300px,auto));
+        grid-column-gap: 2rem;
+        grid-row-gap: 3rem;
+        margin-top: 2rem;
+        margin-left: 0%;
+        width: 100%;
+    }
+    .main-body-left-body-last-mat-card{
+        width: auto;
+        opacity: 1;
+    }
+}

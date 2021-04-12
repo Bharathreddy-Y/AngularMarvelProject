@@ -34,3 +34,17 @@
     flex-direction: row;
     justify-content: space-between;
 }
+@media screen and (max-width: 769px) {
+    .main-body-right-body-first-card{
+        margin-left: 1rem;
+    }
+    .pay-div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+.payment-button{
+    width: 10rem;
+}
+}

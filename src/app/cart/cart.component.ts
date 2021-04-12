@@ -9,42 +9,32 @@ import { RestaurantServicesService } from '../Services/restaurant-services.servi
 export class CartComponent implements OnInit {
   
   public cartTotalItems: any = [];
+  public cartFoodTotalItems: any = [];
   public cartTotal :Number = 0
   public cartSubTotal:number = 0
   public cartTax : number = 0
+  public cartFoodTotal :Number = 0
+  public cartFoodSubTotal:number = 0
+  public cartFoodTax : number = 0
   constructor(private resServices : RestaurantServicesService) {
-    // this.resServices.getData().subscribe(item =>{
-    //   console.log("nerovr",item)
-    //   item.forEach((items:any)=>{
-    //     let subTotal = 0;
-    //     subTotal += items.total;
-    //     let tempTax = subTotal * 0.1;
-    //     const Tax = parseFloat(tempTax.toFixed(2));
-    //     const total = subTotal + Tax;
-    //     item.cartSubTotal = subTotal;
-    //     item.cartTax = Tax;
-    //     item.cartTotal = total;
-    //     
-    //   });
-    // this.cartTotal += item.cartTotal
-    //     this.cartSubTotal = item.cartSubTotal
-    //     this.cartTax = item.cartTax
-        
-    //   console.log("rngriuen",this.cartSubTotal)
-    // })
+    this.resServices.getData().subscribe(item =>{
+      this.cartTotalItems=[...resServices.totalCart]
+      item.forEach((items:any)=>{  
+        this.cartSubTotal = items.cartSubTotal
+        this.cartTax = items.cartTax
+        this.cartTotal =items.cartTotal
+      });
+    })
+    this.resServices.getFoodData().subscribe(item =>{
+      this.cartFoodTotalItems=[...resServices.totalFoodCart]
+      item.forEach((items:any)=>{  
+        this.cartFoodSubTotal = items.cartSubTotal
+        this.cartFoodTax = items.cartTax
+        this.cartFoodTotal =items.cartTotal
+      });
+    })
    }
 
   ngOnInit(){
-    
-    this.cart()
-  }
-  cart(){
-    // console.log("vrnehiuvbfrnneriobneoi",this.resServices.getData())
-    // console.log(this.cartTotal)
-    this.cartTotalItems = this.resServices.totalCart
-    this.resServices.totalCart.forEach((item:any)=>{
-      this.cartTotal += item.cartTotal
-    })
-    console.log(this.resServices.totalCart)
   }
 }
