@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
       this.toastmessage = "Your Cart is Empty."
     }
     else{
-      this.toastmessage = "You Have Successfully added Items to the Cart"
+      this.toastmessage = "You Payment is Succesfull"
     }
     console.log("cartArray",this.cartArray)
     this.showToast=true
