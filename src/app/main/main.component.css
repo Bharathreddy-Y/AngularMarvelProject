@@ -33,7 +33,7 @@
 }
 .main-header-div h3{
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 4rem;
     margin-top: 1rem;
     color: rgb(163, 158, 158);
     position: relative;
@@ -60,14 +60,14 @@
     float: right;
 }
 .mat-inputs{
-    width: 15rem;
-    height: 2rem;
+    width: 17rem;
+    height: 3rem;
     border: 1px solid black;
     border-radius: 1rem;
 }
 .material-icons{
     position: relative;
-    right: 2rem;
+    right: 3rem;
     top: 0.3rem ;
 }
 .main-body-div{
