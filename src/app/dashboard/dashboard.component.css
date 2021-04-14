@@ -23,6 +23,7 @@
 }
 .mat-card{
     margin-top: 2rem;
+    width: auto;
     cursor: pointer;
 }
 .mat-paginator{
