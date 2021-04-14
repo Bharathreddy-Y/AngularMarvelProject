@@ -62,6 +62,10 @@
     left:75%;
     transition: all 1s ease-in-out;
 }
+.messagebackcolor{
+    background-color: red;
+    border-radius: 1rem;
+}
 .toast-mess-div{
     display: flex;
     justify-content: center;

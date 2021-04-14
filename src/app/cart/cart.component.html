@@ -1,7 +1,7 @@
 <!-- <div class="main-body-right-div"> -->
     <div class="main-body-right-body-first-card">
         <div *ngIf=showToast class="success-error-message-div"  [ngClass]="{'messageanimate': showMessageToast}">
-            <div class="toast-mess-div">
+            <div class="toast-mess-div" [ngClass]="{'messagebackcolor': showToastbackcolor}">
                 <h2>{{toastmessage}}</h2>
             </div>
         </div>

@@ -428,6 +428,11 @@ export class RestaurantServicesService implements OnInit {
     console.log('My Cart Array', this.totalFoodCart);
     this.setFoodChangedData(this.dataFood)
   }
+  clearCart()
+  {
+    this.totalCart=[];
+    this.totalFoodCart=[];
+  }
   Decrement(id: any) {
     let tempCart = [...this.totalCart];
     const tempCartIndex = tempCart.indexOf(
