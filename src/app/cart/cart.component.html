@@ -10,7 +10,7 @@
                     <div>total:- {{cartTotal}}$</div>
                 </div>
                 <div class="main-body-right-body-mat-card-details" *ngFor="let i of cartTotalItems">
-                    <div>{{i.productName}}</div>
+                    <div class="product-name">{{i.productName}}</div>
                     <div>{{i.productPrice}}*{{i.count}}</div>
                     <div>{{i.total}}$</div>
                 </div>
@@ -21,7 +21,7 @@
                     <div>total:- {{cartFoodTotal}}$</div>
                 </div>
                 <div class="main-body-right-body-mat-card-details" *ngFor="let i of cartFoodTotalItems">
-                    <div>{{i.productName}}</div>
+                    <div class="product-name">{{i.productName}}</div>
                     <div>{{i.productPrice}}*{{i.count}}</div>
                     <div>{{i.total}}$</div>
                 </div>

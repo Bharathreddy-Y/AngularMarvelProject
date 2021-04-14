@@ -6,6 +6,6 @@
     height: 100%;
 }
 .mat-card{
-    height: 20rem;
-    width: 25rem;
+    height: auto;
+    width: auto;
 }

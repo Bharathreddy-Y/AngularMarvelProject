@@ -24,6 +24,11 @@
     margin-top: 1rem;
     justify-content: space-between;
 }
+.main-body-right-body-mat-card-details .product-name{
+    width: 11rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 .payment-button{
     background-color: rgb(38, 187, 38);
     width: 98%;
