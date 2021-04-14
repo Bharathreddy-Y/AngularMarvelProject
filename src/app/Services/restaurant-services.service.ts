@@ -292,8 +292,8 @@ export class RestaurantServicesService implements OnInit {
   }
   addToArray() {
     if (this.showDrinksBeer) {
-      this.totalCart = this.Beer();
-      return this.totalCart;
+      this.productArray = this.Beer();
+      return this.productArray;
     }
     if (this.showDrinksWine) {
       this.productArray = this.Wine();
