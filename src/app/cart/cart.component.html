@@ -2,7 +2,7 @@
     <div class="main-body-right-body-first-card">
         <div *ngIf=showToast class="success-error-message-div"  [ngClass]="{'messageanimate': showMessageToast}">
             <div class="toast-mess-div">
-                <h2>You Have Successfully added Items to the Cart</h2>
+                <h2>{{toastmessage}}</h2>
             </div>
         </div>
         <div class="check-name-div">

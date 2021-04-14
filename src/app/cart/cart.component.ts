@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   public cartFoodTax : number = 0
   public showMessageToast=false
   public showToast=false
+  public toastmessage:string=""
   constructor(private resServices : RestaurantServicesService) {
     this.resServices.getData().subscribe(item =>{
       this.cartTotalItems=[...resServices.totalCart]
@@ -42,6 +43,13 @@ export class CartComponent implements OnInit {
   }
   onSubmit(){
     this.cartArray = [...this.resServices.totalCart,...this.resServices.totalFoodCart]
+    if(this.cartArray.length===0)
+    {
+      this.toastmessage = "Your Cart is Empty."
+    }
+    else{
+      this.toastmessage = "You Have Successfully added Items to the Cart"
+    }
     console.log("cartArray",this.cartArray)
     this.showToast=true
     setTimeout(()=>{this.showMessageToast=true},100)

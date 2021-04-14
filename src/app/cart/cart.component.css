@@ -35,10 +35,10 @@
 }
 .payment-button{
     background-color: rgb(38, 187, 38);
-    width: 100%;
+    width: 95%;
     height: 4rem;
     margin-top: 4rem;
-    /* margin-left: 2rem; */
+    margin-left: 2rem;
     color: #ffff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -56,9 +56,9 @@
     top: 5rem;
     color: #ffff;
     border-radius: 1rem;
-    background-color: green;
 }
 .messageanimate{
+    background-color: green;
     left:75%;
     transition: all 1s ease-in-out;
 }
@@ -87,4 +87,8 @@
     margin-left: 1rem;
     width: 60%;
 }
+.success-error-message-div{
+    display: none;
+}
+
 }
