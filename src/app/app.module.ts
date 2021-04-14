@@ -30,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { CartComponent } from './cart/cart.component';
 import { FoodComponent } from './food/food.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FoodComponent } from './food/food.component';
     DetailscomponentComponent,
     MainComponent,
     CartComponent,
-    FoodComponent
+    FoodComponent,
+    HomeComponentComponent
   ],
   imports: [
     BrowserModule,

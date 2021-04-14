@@ -6,6 +6,7 @@ import { CreatorsComponent } from './creators/creators.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailscomponentComponent } from './detailscomponent/detailscomponent.component';
 import { EventsComponent } from './events/events.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 import { MainComponent } from './main/main.component';
 import { ParentComponent } from './parent/parent.component';
 import { SeriesComponent } from './series/series.component';
@@ -13,7 +14,8 @@ import { StoriesComponent } from './stories/stories.component';
 
 
 const routes : Routes = [
-  {path:'',redirectTo:"Home",pathMatch:'full'},
+  {path:'',redirectTo:"HomeApp",pathMatch:'full'},
+  {path:'HomeApp',component:HomeComponentComponent},
   {path:'Home',component:MainComponent},
   // {path:'',redirectTo:"dashboard", pathMatch: 'full'},
   {path:"dashboard",component:DashboardComponent},
