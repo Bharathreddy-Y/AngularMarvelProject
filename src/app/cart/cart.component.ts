@@ -10,12 +10,15 @@ export class CartComponent implements OnInit {
   
   public cartTotalItems: any = [];
   public cartFoodTotalItems: any = [];
+  public cartArray:any=[];
   public cartTotal :Number = 0
   public cartSubTotal:number = 0
   public cartTax : number = 0
   public cartFoodTotal :Number = 0
   public cartFoodSubTotal:number = 0
   public cartFoodTax : number = 0
+  public showMessageToast=false
+  public showToast=false
   constructor(private resServices : RestaurantServicesService) {
     this.resServices.getData().subscribe(item =>{
       this.cartTotalItems=[...resServices.totalCart]
@@ -36,5 +39,12 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit(){
+  }
+  onSubmit(){
+    this.cartArray = [...this.resServices.totalCart,...this.resServices.totalFoodCart]
+    console.log("cartArray",this.cartArray)
+    this.showToast=true
+    setTimeout(()=>{this.showMessageToast=true},100)
+    setTimeout(()=>{this.showToast=false,this.showMessageToast=false},2000)
   }
 }

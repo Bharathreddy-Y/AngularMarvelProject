@@ -107,11 +107,11 @@
     width: 100%;
     height: auto;
     margin-top: 2rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
+    /* margin-left: 1rem; */
+    /* margin-right: 2rem; */
 }
 .mat-form-field{
-    width: 97%;
+    width: 100%;
     outline: none;
     border: none;
 }
@@ -160,7 +160,7 @@
         width: 100%;
     }
     .main-body-left-body-second-cards{
-        width: 95%;
+        width: 100%;
         margin-right: 0;
     }
 }

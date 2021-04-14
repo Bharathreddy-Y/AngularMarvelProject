@@ -95,6 +95,7 @@ export class MainComponent implements OnInit {
   ShowDessert(){
     this.resServices.showDrinks = false
     this.showDrinks = this.resServices.showDrinks
+    this.drinksBackColor= false;
     this.resServices.showFood = false
     this.showFood = this.resServices.showFood
     this.foodBackColor = false

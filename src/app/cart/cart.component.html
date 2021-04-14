@@ -1,5 +1,10 @@
 <!-- <div class="main-body-right-div"> -->
     <div class="main-body-right-body-first-card">
+        <div *ngIf=showToast class="success-error-message-div"  [ngClass]="{'messageanimate': showMessageToast}">
+            <div class="toast-mess-div">
+                <h2>You Have Successfully added Items to the Cart</h2>
+            </div>
+        </div>
         <div class="check-name-div">
             check
         </div>
@@ -7,39 +12,39 @@
             <mat-card class="main-body-right-body-mat-card" >
                 <div class="main-body-right-body-mat-card-details" >
                     <div>Drinks</div>
-                    <div>total:- {{cartTotal}}$</div>
+                    <div>Total:- {{cartTotal}} $</div>
                 </div>
                 <div class="main-body-right-body-mat-card-details" *ngFor="let i of cartTotalItems">
                     <div class="product-name">{{i.productName}}</div>
-                    <div>{{i.productPrice}}*{{i.count}}</div>
-                    <div>{{i.total}}$</div>
+                    <div>{{i.productPrice}} X {{i.count}}</div>
+                    <div>{{i.total}} $</div>
                 </div>
             </mat-card>
             <mat-card class="main-body-right-body-mat-card">
                 <div class="main-body-right-body-mat-card-details">
                     <div>Food</div>
-                    <div>total:- {{cartFoodTotal}}$</div>
+                    <div>Total:- {{cartFoodTotal}} $</div>
                 </div>
                 <div class="main-body-right-body-mat-card-details" *ngFor="let i of cartFoodTotalItems">
                     <div class="product-name">{{i.productName}}</div>
-                    <div>{{i.productPrice}}*{{i.count}}</div>
-                    <div>{{i.total}}$</div>
+                    <div>{{i.productPrice}} X {{i.count}}</div>
+                    <div>{{i.total}} $</div>
                 </div>
             </mat-card>
             <mat-card class="main-body-right-body-mat-card"></mat-card>
             <mat-card class="main-body-right-body-last-mat-card" >
                 <div class="last">
                     <div>Sub-Total</div>
-                    <div>{{cartSubTotal}}$</div>
+                    <div>{{cartSubTotal}} $</div>
                 </div>
                 <div class="last">
                     <div>EstimatedTaxes</div>
-                    <div>{{cartTax}}$</div>
+                    <div>{{cartTax}} $</div>
                 </div>
             </mat-card>
         </div>
         <div class="pay-div">
-            <button mat-button class="payment-button">Pay Now</button>
+            <button mat-button class="payment-button" (click)="onSubmit()">Pay $ {{cartTotal}}</button>
         </div>
     </div>
 
