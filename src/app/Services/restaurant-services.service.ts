@@ -36,8 +36,7 @@ export class RestaurantServicesService implements OnInit {
   public c:number=0;
   ngOnInit() {}
 
-  Wine() {
-    const productWine = [
+    productWine = [
       {
         id: 0,
         productId: 123,
@@ -117,10 +116,7 @@ export class RestaurantServicesService implements OnInit {
         cartTotal: 0,
       },
     ];
-    return productWine;
-  }
-  Beer() {
-    const productBeer = [
+    productBeer = [
       {
         id: 6,
         productId: 129,
@@ -200,10 +196,7 @@ export class RestaurantServicesService implements OnInit {
         cartTotal: 0,
       },
     ];
-    return productBeer;
-  }
-  Biryani() {
-    const productBiryani = [
+     productBiryani = [
       {
         id: 12,
         productId: 135,
@@ -244,10 +237,7 @@ export class RestaurantServicesService implements OnInit {
         cartTotal: 0,
       },
     ];
-    return productBiryani;
-  }
-  Roti() {
-    const productRoti = [
+    productRoti = [
       {
         id: 15,
         productId: 138,
@@ -288,31 +278,27 @@ export class RestaurantServicesService implements OnInit {
         cartTotal: 0,
       },
     ];
-    return productRoti;
-  }
   addToArray() {
     if (this.showDrinksBeer) {
-      this.productArray = this.Beer();
-      return this.productArray;
+      this.productArray = this.productBeer;
     }
     if (this.showDrinksWine) {
-      this.productArray = this.Wine();
-      return this.productArray;
+      this.productArray = this.productWine;
     }
   }
   addToFoodArray() {
     if (this.showFoodBiryani) {
-      this.productFoodArray = this.Biryani();
+      this.productFoodArray = this.productBiryani;
       return this.productFoodArray;
     }
     if (this.showFoodRoti) {
-      this.productFoodArray = this.Roti();
+      this.productFoodArray = this.productRoti;
       return this.productFoodArray;
     }
   }
   setProduct() {
     this.cartDrinkItems= [...this.productArray]
-    console.log("product Items",this.totalCart)
+    console.log("total cart Items",this.totalCart)
     console.log("cart Drink Items",this.cartDrinkItems)
   }
   setFoodProduct() {
@@ -320,7 +306,7 @@ export class RestaurantServicesService implements OnInit {
   }
   Increment(id: any) {
     this.addToCart(id);
-    let tempCart = [...this.cartDrinkItems];
+    let tempCart = [...this.totalCart];
     const tempCartIndex = tempCart.indexOf(
       this.cartDrinkItems.find((t: any) => t.id === id)
     );
@@ -430,8 +416,10 @@ export class RestaurantServicesService implements OnInit {
   }
   clearCart()
   {
+    this.data=[];
     this.totalCart=[];
     this.totalFoodCart=[];
+    console.log("d",this.data)
   }
   Decrement(id: any) {
     let tempCart = [...this.totalCart];
